@@ -1,0 +1,10 @@
+D:\FlightBooking\CommonClassLibrary\bin\Debug\netcoreapp3.1\CommonClassLibrary.deps.json
+D:\FlightBooking\CommonClassLibrary\bin\Debug\netcoreapp3.1\CommonClassLibrary.dll
+D:\FlightBooking\CommonClassLibrary\bin\Debug\netcoreapp3.1\CommonClassLibrary.pdb
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.csproj.AssemblyReference.cache
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.AssemblyInfoInputs.cache
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.AssemblyInfo.cs
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.csproj.CoreCompileInputs.cache
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.dll
+D:\FlightBooking\CommonClassLibrary\obj\Debug\netcoreapp3.1\CommonClassLibrary.pdb

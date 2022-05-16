@@ -1,0 +1,144 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Admin/getUser",
+      "DownstreamScheme": "http",
+      "ServiceName": "AdminService",
+      "UpstreamPathTemplate": "/api/gatway/Admin/getUser",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Admin/createUser",
+      "DownstreamScheme": "http",
+      "ServiceName": "AdminService",
+      "UpstreamPathTemplate": "/api/gatway/Admin/createUser",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Admin/login",
+      "DownstreamScheme": "http",
+      "ServiceName": "AdminService",
+      "UpstreamPathTemplate": "/api/gatway/Admin/login",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Airline/getAirlines",
+      "DownstreamScheme": "http",
+      "ServiceName": "AirlineService",
+      "UpstreamPathTemplate": "/api/gatway/Airline/getAirlines",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Airline/CreateAirline",
+      "DownstreamScheme": "http",
+      "ServiceName": "AirlineService",
+      "UpstreamPathTemplate": "/api/gatway/Airline/CreateAirline",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Airline/UpdateAirline",
+      "DownstreamScheme": "http",
+      "ServiceName": "AirlineService",
+      "UpstreamPathTemplate": "/api/gatway/Airline/UpdateAirline",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Schedule/getScheduleDetail",
+      "DownstreamScheme": "http",
+      "ServiceName": "ScheduleService",
+      "UpstreamPathTemplate": "/api/gatway/Schedule/getScheduleDetail",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Schedule/createScheduleDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "ScheduleService",
+      "UpstreamPathTemplate": "/api/gatway/Schedule/createScheduleDetails",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Schedule/searchScheduleDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "ScheduleService",
+      "UpstreamPathTemplate": "/api/gatway/Schedule/searchScheduleDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/Schedule/updateScheduleDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "ScheduleService",
+      "UpstreamPathTemplate": "/api/gatway/Schedule/updateScheduleDetails",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/TicketBooking/getTicketBooking",
+      "DownstreamScheme": "http",
+      "ServiceName": "TicketBookingService",
+      "UpstreamPathTemplate": "/api/gatway/TicketBooking/getTicketBooking",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/TicketBooking/createTicketBooking",
+      "DownstreamScheme": "http",
+      "ServiceName": "TicketBookingService",
+      "UpstreamPathTemplate": "/api/gatway/TicketBooking/createTicketBooking",
+      "UpstreamHttpMethod": [ "Post" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/TicketBooking/updateScheduleDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "TicketBookingService",
+      "UpstreamPathTemplate": "/api/gatway/TicketBooking/updateScheduleDetails",
+      "UpstreamHttpMethod": [ "Put" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/TicketBooking/GetFlightById",
+      "DownstreamScheme": "http",
+      "ServiceName": "TicketBookingService",
+      "UpstreamPathTemplate": "/api/gatway/TicketBooking/GetFlightById",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/TicketBooking/getPnrDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "TicketBookingService",
+      "UpstreamPathTemplate": "/api/gatway/TicketBooking/getPnrDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "UseServiceDiscovery": true,
+      "DownstreamPathTemplate": "/api/TicketBooking/getEmailDetails",
+      "DownstreamScheme": "http",
+      "ServiceName": "TicketBookingService",
+      "UpstreamPathTemplate": "/api/gatway/TicketBooking/getEmailDetails",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+
+
+
+  ],
+  "GlobalConfiguration": {
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": "8500",
+      "Type": "Consul"
+    }
+  }
+}
