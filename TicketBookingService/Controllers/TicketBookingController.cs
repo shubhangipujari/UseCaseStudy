@@ -32,11 +32,11 @@ namespace TicketBookingService.Controllers
                 return new OkObjectResult(ticketBookingDetails);
             }
             catch (Exception ex)
-            { 
-                 ex.Message.ToString();
+            {
+                ex.Message.ToString();
                 return BadRequest();
             }
-           
+
         }
 
 
@@ -51,6 +51,7 @@ namespace TicketBookingService.Controllers
                     Random r = new Random();
                     int pnrNumber = r.Next();
                     ticketBookingDetails.PnrNumber = pnrNumber.ToString();
+                    ticketBookingDetails.IsCanceled = 0;
                     _TicketRepository.CreateTicketBooking(ticketBookingDetails);
                     scope.Complete();
                     return CreatedAtAction(nameof(getTicketBooking), ticketBookingDetails.PnrNumber);
@@ -61,7 +62,7 @@ namespace TicketBookingService.Controllers
                 ex.Message.ToString();
                 return BadRequest();
             }
-         
+
         }
         //cancle Ticket using IS_CANCELED=1
         [HttpPut]
@@ -76,7 +77,9 @@ namespace TicketBookingService.Controllers
                     {
                         _TicketRepository.UpdateTicketBooking(scheduleDetail);
                         scope.Complete();
-                        return new OkResult();
+                        return CreatedAtAction(nameof(getTicketBooking), scheduleDetail.PnrNumber);
+
+                        // return new OkResult();
                     }
                 }
                 return new NoContentResult();
@@ -86,7 +89,7 @@ namespace TicketBookingService.Controllers
                 ex.Message.ToString();
                 return BadRequest();
             }
-         
+
         }
 
 
@@ -109,12 +112,12 @@ namespace TicketBookingService.Controllers
 
         [HttpGet]
         [Route("getPnrDetails")]
-        public  IActionResult GetPnrDetails(string pnrNumber)
+        public IActionResult GetPnrDetails(string pnrNumber)
         {
             try
             {
 
-               // var flightDetails=
+                // var flightDetails=
                 var flightDetails = _TicketRepository.GetPnrDetails(pnrNumber);
                 return new OkObjectResult(flightDetails);
             }
@@ -134,6 +137,33 @@ namespace TicketBookingService.Controllers
             {
                 var flightDetails = _TicketRepository.History(email);
                 return new OkObjectResult(flightDetails);
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("getBookingDetails")]
+        public async Task<ActionResult<IEnumerable<FlightBookingDetail>>> getBookingDetails(int userId, int scheduleId)
+        {
+            try
+            {
+                var result = await _TicketRepository.getBookingId(userId, scheduleId);
+
+                if (result.Any())
+                {
+                    return Ok(result);
+                }
+                else
+
+                {
+                    return null;
+                }
+
+                
             }
             catch (Exception ex)
             {

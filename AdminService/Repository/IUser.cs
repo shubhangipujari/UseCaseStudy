@@ -14,7 +14,7 @@ namespace AdminService.Repository
         void DeleteUser(int userId);
         void UpdateUser(UserDetail user);
 
-        Tokan Login(string emailId, string password);
+        Object Login(string emailId, string password);
         void Save();
 
 

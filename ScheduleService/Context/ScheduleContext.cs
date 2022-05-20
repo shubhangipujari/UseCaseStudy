@@ -90,9 +90,8 @@ namespace ScheduleService.Context
                     .HasColumnType("datetime")
                     .HasColumnName("START_DATE_TIME");
 
-                entity.Property(e => e.TicketCost)
-                    .HasColumnType("decimal(9, 9)")
-                    .HasColumnName("TICKET_COST");
+                entity.Property(e => e.TicketCost).HasColumnName("TICKET_COST");
+                           
 
                 entity.Property(e => e.ToPlace)
                     .IsRequired()

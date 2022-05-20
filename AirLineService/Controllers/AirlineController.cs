@@ -11,7 +11,7 @@ using System.Transactions;
 
 namespace AirLineService.Controllers
 {
-    [Authorize]
+    //[Authorize]
     [Route("api/[controller]")]
     [ApiController]
     public class AirlineController : ControllerBase

@@ -14,8 +14,10 @@ namespace TicketBookingService.Repository
         // void DeleteUser(int userId);
         void UpdateTicketBooking(FlightBookingDetail ticketBooking);
         FlightBookingDetail GetFlightById(int flightId);
+
         IEnumerable< FlightBookingDetail> GetPnrDetails(string pnrNumber);
         IEnumerable<FlightBookingDetail> History(string emailId);
+        Task<IEnumerable<FlightBookingDetail>> getBookingId(int userId, int scheduleId);
 
         void Save();
     }

@@ -36,9 +36,7 @@ namespace TicketBookingService.Context
 
                 entity.ToTable("FLIGHT_BOOKING_DETAILS");
 
-                entity.Property(e => e.Cost)
-                    .HasColumnType("decimal(9, 9)")
-                    .HasColumnName("COST");
+                entity.Property(e => e.Cost).HasColumnName("COST");
 
                 entity.Property(e => e.CreatedModifiedDate)
                     .HasColumnType("datetime")

@@ -19,7 +19,7 @@ namespace ScheduleService.Models
         public string InstrumentUsed { get; set; }
         public int TotNumBuisSeat { get; set; }
         public int TotNumNonbuisSeat { get; set; }
-        public decimal TicketCost { get; set; }
+        public int TicketCost { get; set; }
         public int NumberOfRows { get; set; }
         public string Meal { get; set; }
         public string ChooseWay { get; set; }

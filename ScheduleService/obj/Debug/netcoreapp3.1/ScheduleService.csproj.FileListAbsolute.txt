@@ -1,5 +1,6 @@
 D:\FlightBooking\ScheduleService\bin\Debug\netcoreapp3.1\appsettings.Development.json
 D:\FlightBooking\ScheduleService\bin\Debug\netcoreapp3.1\appsettings.json
+D:\FlightBooking\ScheduleService\bin\Debug\netcoreapp3.1\libman.json
 D:\FlightBooking\ScheduleService\bin\Debug\netcoreapp3.1\ScheduleService.exe
 D:\FlightBooking\ScheduleService\bin\Debug\netcoreapp3.1\ScheduleService.deps.json
 D:\FlightBooking\ScheduleService\bin\Debug\netcoreapp3.1\ScheduleService.runtimeconfig.json
@@ -67,7 +68,6 @@ D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\staticwebassets\Schedul
 D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\staticwebassets\ScheduleService.StaticWebAssets.xml
 D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\scopedcss\bundle\ScheduleService.styles.css
 D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\ScheduleService.RazorTargetAssemblyInfo.cache
-D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\ScheduleService.csproj.CopyComplete
 D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\ScheduleService.dll
 D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\ScheduleService.pdb
 D:\FlightBooking\ScheduleService\obj\Debug\netcoreapp3.1\ScheduleService.genruntimeconfig.cache

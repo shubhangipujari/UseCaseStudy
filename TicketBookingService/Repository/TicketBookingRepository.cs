@@ -23,6 +23,7 @@ namespace TicketBookingService.Repository
         }
         public void CreateTicketBooking(FlightBookingDetail ticketBookinh)
         {
+           
                _dbContext.Add(ticketBookinh);
                 Save();              
         }
@@ -57,6 +58,8 @@ namespace TicketBookingService.Repository
            return res;
            
         }
+
+
         public IEnumerable<FlightBookingDetail> History(string email)
         {
              UserContext _dbUserContext=new UserContext();
@@ -68,6 +71,14 @@ namespace TicketBookingService.Repository
             resDetails = _dbContext.details.Where(x => x.UserId == userid).ToList<FlightBookingDetail>();
 
             return resDetails;           
+        }
+        public async Task<IEnumerable<FlightBookingDetail>> getBookingId(int userId, int scheduleId)
+        {
+            IQueryable<FlightBookingDetail> query = _dbContext.details;
+
+            query = query.Where(e => e.UserId == userId);
+            query = query.Where(e => e.ScheduedId == scheduleId);
+            return await query.ToListAsync();
         }
     }
 }

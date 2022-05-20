@@ -1,4 +1,5 @@
-﻿using AdminService.Models;
+﻿
+using AdminService.Models;
 using AdminService.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
@@ -20,11 +21,15 @@ namespace AdminService.Controllers
     public class UsersController : ControllerBase
     {
         private readonly IUser _userRepository;
+     
 
         public UsersController(IUser userRepository)
         {
             _userRepository = userRepository;
+            
         }
+
+       
 
         [HttpGet]
         [Route("getUser")]
@@ -69,17 +74,23 @@ namespace AdminService.Controllers
         {
             try
             {
+              
+               
 
                 using (var scope = new TransactionScope())
                 {
+                   
                     _userRepository.CreateUser(user);
                     scope.Complete();
                     return CreatedAtAction(nameof(getUser), user);
+               
+
                 }
             }
             catch (Exception ex)
             {
                 ex.Message.ToString();
+
                 return null;
             }
         }
@@ -132,14 +143,16 @@ namespace AdminService.Controllers
         {
             try
             {
-                var tokan = _userRepository.Login(emailId, password);
+               
+                var combinedCollection = _userRepository.Login(emailId, password);
 
-                if (tokan == null)
+                
+                if (combinedCollection == null)
                 {
                     return BadRequest();
 
                 }
-                return new OkObjectResult(tokan);
+                return new OkObjectResult(combinedCollection);
 
             }
             catch (Exception ex)

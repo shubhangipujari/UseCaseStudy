@@ -14,8 +14,10 @@ namespace ScheduleService.Repository
         // void DeleteUser(int userId);
         void UpdateSchedule(ScheduleDetail scheduleDetail);
        Task<IEnumerable<ScheduleDetail>> searchScheduleDetails( string fromPlace, string toPlace);
-         
-       //Task<IEnumerable<ScheduleDetail>> searchScheduleDetails(DateTime StartDateTime, DateTime endDateTime, string fromPlace, string toPlace, char chooseway);
+
+        ScheduleDetail GetScheduleById(int scheduleId);
+
+        //Task<IEnumerable<ScheduleDetail>> searchScheduleDetails(DateTime StartDateTime, DateTime endDateTime, string fromPlace, string toPlace, char chooseway);
 
         void Save();
     }

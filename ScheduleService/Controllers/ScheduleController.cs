@@ -53,8 +53,8 @@ namespace ScheduleService.Controllers
                     return CreatedAtAction(nameof(getScheduleDetail), scheduleDetail);
                 }
             }
-            catch (Exception e)
-            { return null; }
+            catch (Exception ex)
+            { ex.Message.ToString(); return null; }
           
         }
 
@@ -97,6 +97,22 @@ namespace ScheduleService.Controllers
                 }
 
                 return NotFound();
+            }
+            catch (Exception ex)
+            {
+                ex.Message.ToString();
+                return BadRequest();
+            }
+        }
+
+        [HttpGet]
+        [Route("getScheduleById")]
+        public IActionResult GetFlightById(int id)
+        {
+            try
+            {
+                var bookingDetails = _scheduleRepository.GetScheduleById(id);
+                return new OkObjectResult(bookingDetails);
             }
             catch (Exception ex)
             {

@@ -33,10 +33,9 @@ namespace AdminService.Repository
        
         public void CreateUser(UserDetail user)
         {
-           
+          
                 _dbContext.Add(user);
                 Save();
-           
         }
 
         public void DeleteUser(int userId)
@@ -71,14 +70,16 @@ namespace AdminService.Repository
                 _dbContext.Entry(user).State = EntityState.Modified;
                 Save();
         }
-        public Tokan Login(string emailid, string password)
+        public Object Login(string emailid, string password)
         {
           
                 Boolean result = _dbContext.UserDetails.Any((x => x.Email == emailid && x.Password == password));
                 //return result;
                 if (result)
                 {
-                    var tokenHandler = new JwtSecurityTokenHandler();
+                List<UserDetail> res = new List<UserDetail>();
+                var collection = new Dictionary<string, object>();
+                var tokenHandler = new JwtSecurityTokenHandler();
                     var tokenKey = Encoding.UTF8.GetBytes(configuartion["JWT:Key"]);
 
                     var tokenDescriptor = new SecurityTokenDescriptor
@@ -91,9 +92,17 @@ namespace AdminService.Repository
                         SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(tokenKey), SecurityAlgorithms.HmacSha256Signature)
                     };
                     var token = tokenHandler.CreateToken(tokenDescriptor);
-                    // var user = _dbContext.UserDetails.Where((x => x.Email == emailid));
-                    var tokanstring = new Tokan { Token = tokenHandler.WriteToken(token) };
-                    return tokanstring;
+                // var user = _dbContext.UserDetails.Where((x => x.Email == emailid));
+                res = _dbContext.UserDetails.Where(x => x.Email == emailid).ToList<UserDetail>();
+
+                var user1 = res[0];
+                
+                var tokanstring = new Tokan { Token = tokenHandler.WriteToken(token) };
+
+                collection.Add("Token", tokanstring);
+                collection.Add("UserDetails", user1);
+
+                return collection;
                 }
                 else
                 {

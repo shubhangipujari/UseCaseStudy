@@ -22,8 +22,10 @@ namespace ScheduleService.Repository
                 return _dbContext.details.ToList();
 
             }
-            catch (Exception e)
-            { return null; }
+            catch (Exception ex)
+            { ex.Message.ToString();
+             return null;
+            }
         }
 
         public void CreateSchedule(ScheduleDetail scheduleDetail)
@@ -33,8 +35,8 @@ namespace ScheduleService.Repository
                 _dbContext.Add(scheduleDetail);
                 Save();
             }
-            catch (Exception e)
-            { }
+            catch (Exception ex)
+            { ex.Message.ToString(); }
 
         }
 
@@ -45,7 +47,7 @@ namespace ScheduleService.Repository
                 _dbContext.Entry(scheduleDetail).State = EntityState.Modified;
                 Save();
             }
-            catch (Exception e) { }
+            catch (Exception ex) { ex.Message.ToString(); }
           
         }
 
@@ -56,9 +58,10 @@ namespace ScheduleService.Repository
                 _dbContext.SaveChanges();
 
             }
-            catch (Exception e)
+            catch (Exception ex)
             {
-
+                ex.Message.ToString();
+               
             }
         }
 
@@ -87,8 +90,14 @@ namespace ScheduleService.Repository
 
                 return await query.ToListAsync();
             }
-            catch (Exception e)
-            { return null; }
+            catch (Exception ex)
+            { ex.Message.ToString(); return null; }
         }
+
+        public ScheduleDetail GetScheduleById(int scheduleId)
+        {
+            return _dbContext.details.Find(scheduleId);
+        }
+
     }
 }
