@@ -68,7 +68,6 @@ D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\staticwebassets\AirLineS
 D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\staticwebassets\AirLineService.StaticWebAssets.xml
 D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\scopedcss\bundle\AirLineService.styles.css
 D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\AirLineService.RazorTargetAssemblyInfo.cache
-D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\AirLineService.csproj.CopyComplete
 D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\AirLineService.dll
 D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\AirLineService.pdb
 D:\FlightBooking\AirLineService\obj\Debug\netcoreapp3.1\AirLineService.genruntimeconfig.cache

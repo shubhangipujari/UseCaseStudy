@@ -85,11 +85,11 @@ namespace ScheduleService.Controllers
         [HttpGet]
         [Route("searchScheduleDetails")]
 
-        public async Task<ActionResult<IEnumerable<ScheduleDetail>>> Search(string fromplace, string toPlace)
+        public async Task<ActionResult<IEnumerable<ScheduleDetail>>> Search(string fromplace, string toPlace, DateTime depaturetime,string chooedWay)
         {
             try
             {
-                var result = await _scheduleRepository.searchScheduleDetails(fromplace, toPlace);
+                var result = await _scheduleRepository.searchScheduleDetails(fromplace, toPlace, depaturetime, chooedWay);
 
                 if (result.Any())
                 {

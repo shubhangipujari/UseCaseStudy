@@ -32,6 +32,10 @@ namespace ScheduleService.Repository
         {
             try
             {
+                //scheduleDetail.StartDateTime = scheduleDetail.StartDateTime.ToString("yyyy-MM-dd HH:mm:ss");
+                scheduleDetail.StartDateTime = DateTime.ParseExact(scheduleDetail.StartDateTime.ToString("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss", null);
+                scheduleDetail.EndDateTime = DateTime.ParseExact(scheduleDetail.EndDateTime.ToString("yyyy-MM-dd HH:mm:ss"), "yyyy-MM-dd HH:mm:ss", null);
+
                 _dbContext.Add(scheduleDetail);
                 Save();
             }
@@ -67,13 +71,11 @@ namespace ScheduleService.Repository
 
 
 
-        public async Task<IEnumerable<ScheduleDetail>> searchScheduleDetails(string fromPlace, string toPlace)
+        public async Task<IEnumerable<ScheduleDetail>> searchScheduleDetails(string fromPlace, string toPlace, DateTime departuredate,string choosedWay )
         {
             try
             {
                 IQueryable<ScheduleDetail> query = _dbContext.details;
-
-
 
                 if (fromPlace != null)
                 {
@@ -82,6 +84,14 @@ namespace ScheduleService.Repository
                 if (toPlace != null)
                 {
                     query = query.Where(e => e.ToPlace == toPlace);
+                }
+                if (departuredate != null)
+                {
+                    query = query.Where(e => e.StartDateTime == departuredate);
+                }
+                if (choosedWay != null)
+                {
+                    query = query.Where(e => e.ChooseWay == choosedWay);
                 }
                 //if (chooseway.emp != '')
                 //{
